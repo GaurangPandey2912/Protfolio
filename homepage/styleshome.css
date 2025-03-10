@@ -206,6 +206,84 @@ section {
     padding: 80px 20px;
     text-align: center;
 }
+.github-container {
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.github-container h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ffcc00;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.contribution-box {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background: rgba(255, 255, 0, 0.2);
+    border-radius: 8px;
+}
+
+.contribution-box div {
+    text-align: center;
+}
+
+.contribution-box span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Latest Repositories & Activity */
+.list-container {
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.list-container h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ffcc00;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 8px;
+    background: rgba(255, 255, 0, 0.2);
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+ul li:hover {
+    transform: translateX(5px);
+}
+
+ul li a {
+    text-decoration: none;
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+ul li a:hover {
+    color: white;
+}
 
 /* Footer (Now Sticks to Bottom) */
 footer {
