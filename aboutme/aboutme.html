@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Gaurang Pandey</title>
+    <link rel="stylesheet" href="aboutme.css">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+<header>
+    <h1>Gaurang Pandey</h1>
+    <nav>
+        <ul>
+            <li><a href="/Protfolio/homepage/homepage.html">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="about-me">
+    <h2>About Me</h2>
+    <p>Hi, I'm Gaurang Pandey, a passionate developer with a strong interest in various technologies. I graduated from St. Francis' College, Lucknow, and am now a sophomore at Vellore Institute of Technology, Chennai, pursuing a B.Tech in Computer Science and Engineering with a specialization in AI and ML.
+<br>
+<br>
+        I'm a fast learner who loves picking up new skills and knowledge. In my free time, I enjoy playing football and volleyball, which keep me active and teach me teamwork.</p>
+    <ul class="about-list">
+        <li class="animate left">🚀 Passionate about coding and problem-solving</li>
+        <li class="animate right">📚 Enthusiastic learner, always exploring new tech</li>
+        <li class="animate left">💻 Skilled in C++, Python, JavaScript, and more</li>
+        <li class="animate right">🔗 Interested in Web Development and Machine Learning</li>
+    </ul>
+</section>
+
+<section class="skills">
+    <h2>My Skills</h2>
+    <div class="skills-container">
+        <div class="skill-card">
+            <img src="images/c++.png" alt="C++">
+            <div class="skill-name">C++</div>
+        </div>
+        <div class="skill-card">
+            <img src="images/python.png" alt="Python">
+            <div class="skill-name">Python</div>
+        </div>
+        <div class="skill-card">
+            <img src="images/java.png" alt="Java">
+            <div class="skill-name">Java</div>
+        </div>
+        <div class="skill-card">
+            <img src="images/html.png" alt="HTML">
+            <div class="skill-name">HTML</div>
+        </div>
+    </div>
+    <div class="skills-container">
+        <div class="skill-card">
+            <img src="images/js.webp" alt="JavaScript">
+            <div class="skill-name">JavaScript</div>
+        </div>
+        <div class="skill-card">
+            <img src="images/css.png" alt="CSS">
+            <div class="skill-name">CSS</div>
+        </div>
+        <div class="skill-card">
+            <img src="images/nodejs.png" alt="NodeJs">
+            <div class="skill-name">NodeJs</div>
+        </div>
+        <div class="skill-card">
+            <img src="images/react.png" alt="React">
+            <div class="skill-name">React</div>
+        </div>
+    </div>
+</section>
+
+<section id="resume">
+    <h2>My Resume</h2>
+    <div class="qr-container">
+        <div id="qrcode"></div>
+    </div>
+    <script>
+new QRCode(document.getElementById("qrcode"), "https://docs.google.com/document/d/1jiY9ZnqpT7XeRfwtbJJxfsgYf9qrKef-Ac8rhw83ypM/edit?usp=sharing");
+
+    </script>
+</section>
+
+<section id="socials">
+    <div class="social-links">
+        <a href="https://github.com/GaurangPandey2912" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="30px" alt="GitHub">
+        </a>
+        
+        <a href="https://www.linkedin.com/in/your-profile" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="30px" alt="LinkedIn">
+        </a>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Gaurang Pandey. All rights reserved.</p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                } else {
+                    entry.target.classList.remove("show");
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll(".animate").forEach(el => observer.observe(el));
+    });
+</script>
+
+</body>
+</html>
