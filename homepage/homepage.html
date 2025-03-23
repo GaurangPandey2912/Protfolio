@@ -23,7 +23,7 @@
     
     <section id="hero">
         <div class="hero-content">
-            <img src="profile.jpeg" alt="Profile Picture" class="profile-pic">
+            <img src="images/profile.jpeg" alt="Profile Picture" class="profile-pic">
             <div class="hero-text">
                 <h1 id="greeting"></h1> 
             </div>
@@ -118,13 +118,16 @@
                 this.textContent = "Switch to Professional";
             }
         });
-        const username = "GaurangPandey2912";
+        const token = "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"; 
+const username = "GaurangPandey2912";
 
 async function fetchGitHubRepos() {
-    const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=5`);
+    const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=5`, {
+        headers: { Authorization: `token ${token}` }
+    });
     const repos = await response.json();
-
-    if (repos.message) {
+    
+    if (repos.message) { // Check if an error occurred
         console.error("GitHub API Error:", repos.message);
         return;
     }
@@ -134,9 +137,11 @@ async function fetchGitHubRepos() {
 }
 
 async function fetchGitHubActivity() {
-    const response = await fetch(`https://api.github.com/users/${username}/events/public`);
+    const response = await fetch(`https://api.github.com/users/${username}/events/public`, {
+        headers: { Authorization: `token ${token}` }
+    });
     const events = await response.json();
-
+    
     if (events.message) {
         console.error("GitHub API Error:", events.message);
         return;
@@ -149,7 +154,6 @@ async function fetchGitHubActivity() {
 // Load data
 fetchGitHubRepos();
 fetchGitHubActivity();
-
     </script>
     
     

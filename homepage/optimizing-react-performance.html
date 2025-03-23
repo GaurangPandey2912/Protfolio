@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimizing React Performance</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            background-color: black;
+            color: #FFD700;
+            padding: 20px;
+            margin: 40px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            line-height: 1.6;
+        }
+        html, body {
+            min-height: 100vh;
+            scroll-behavior: smooth;
+            display: flex;
+            flex-direction: column;
+            background-color: #121212;
+            color: white;
+            padding-top: 80px;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #0f2027;
+            color: #FFD700;
+            padding: 15px 0;
+            text-align: center;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.9);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #FFD700;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ffffff;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gaurang Pandey</h1>
+        <nav>
+            <ul>
+                <li><a href="/Portfolio/homepage/homepage.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h1>Optimizing React Performance</h1>
+        <p>React applications can sometimes face performance issues if not optimized properly. Here are some key techniques to improve performance.</p>
+        
+        <div class="image-container">
+            <img src="https://miro.medium.com/max/1400/1*2XHIn_vUtqFr4R9lCmGfgg.png" alt="React Virtual DOM vs Real DOM">
+        </div>
+        
+        <h2>1. Using React.memo</h2>
+        <p>React.memo is a higher-order component that prevents unnecessary re-renders by memoizing the result.</p>
+        
+        <div class="image-container">
+            <img src="https://miro.medium.com/max/1400/1*pvofBbh4BbeIlpF9PyIEXA.png" alt="React Rendering Process">
+        </div>
+        
+        <h2>2. Code Splitting and Lazy Loading</h2>
+        <p>Using React.lazy and Suspense can help in loading components only when needed.</p>
+        
+        <div class="image-container">
+            <img src="images/load.jpg" alt="Code Splitting and Lazy Loading">
+        </div>
+        
+        <h2>3. Optimizing React Rendering</h2>
+        <p>Using keys properly, reducing unnecessary state updates, and using the Profiler tool can improve rendering efficiency.</p>
+        
+        <div class="image-container">
+            <img src="images/component-chart.png" alt="React Profiler Tool">
+        </div>
+        
+        <p style="text-align: center; font-weight: bold; margin-top: 20px;">By following these techniques, you can significantly enhance the performance of your React applications.</p>
+    </div>
+</body>
+</html>

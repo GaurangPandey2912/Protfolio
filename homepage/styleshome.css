@@ -85,7 +85,7 @@ nav ul li a:hover::after {
     justify-content: center;
     padding: 150px 20px;
     color: #FFD700;
-    background-image: url('background.jpg'); /* Set your background image */
+    background-image: url(images/background.jpg); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -145,7 +145,7 @@ nav ul li a:hover::after {
     text-align: left;
     margin: 30px auto;
     padding: 20px;
-    max-width: 90%; /* Increased width */
+    max-width: 90%; 
     background: rgba(255, 215, 0, 0.1);
     border-radius: 10px;
 }
@@ -303,7 +303,7 @@ section {
 /* Footer (Now Sticks to Bottom) */
 footer {
     text-align: center;
-    background-image: url('background.jpg');
+    background-image: url('images/background.jpg');
     color: #FFD700;
     padding: 10px;
     position: relative;
