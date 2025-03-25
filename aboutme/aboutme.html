@@ -14,8 +14,7 @@
     <nav>
         <ul>
             <li><a href="/Protfolio/homepage/homepage.html">Home</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="/Protfolio/projects/projects.html">Projects</a></li>
         </ul>
     </nav>
 </header>
@@ -73,21 +72,39 @@
         </div>
     </div>
 </section>
-<section id="codechef">
-    <h2>My CodeChef Journey</h2>
-    <p>I'm an active competitive programmer on CodeChef, where I constantly challenge myself with problems and contests.</p>
-    <ul class="about-list">
-        <li class="animate left">🏆 CodeChef Rating: <strong>1259</strong></li>
-        <li class="animate right">✅ Problems Solved: <strong>30+</strong></li>
-        <li class="animate left">🔥 Contests Participated: <strong>10</strong></li>
-        <li class="animate right">🚀 Best Rank Achieved: <strong>7500</strong></li>
-    </ul>
-    <a href="https://www.codechef.com/users/gaurang2912" target="_blank" class="codechef-link">
-        <img src="images/codechef.jpg" width="40px" alt="CodeChef">
-        <span>View My CodeChef Profile</span>
-    </a>
-</section>
+<section id="certifications">
+    <h2><center>My Certifications</center></h2>
+    <br>
+    <div class="sectioncert">
+    <div class="cert-grid">
+        <div class="cert-tile" data-pdf="certificates/cert1.pdf">
+            <p>C Training by IIT Bombay</p>
+        </div>
+        <div class="cert-tile" data-pdf="certificates/cert2.pdf">
+            <p>C++ Training by IIT Bombay</p>
+        </div>
+        <div class="cert-tile" data-pdf="certificates/cert3.pdf">
+            <p>Python Training by IIT Bombay</p>
+        </div>
+    </div>
+    <div class="cert-grid">
+        <div class="cert-tile" data-pdf="certificates/cert4.pdf">
+            <p>Hackathon Participation</p>
+        </div>
+        <div class="cert-tile" data-pdf="certificates/cert5.pdf">
+            <p>Data-Science-Competition</p>
+        </div>
+    </div>
+    </div>
 
+    <!-- Modal to preview PDF -->
+    <div id="pdf-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <iframe id="pdf-viewer" width="100%" height="500px"></iframe>
+        </div>
+    </div>
+</section>
 <section id="resume">
     <h2>Download My Resume</h2>
     <div class="qr-container">
@@ -128,6 +145,23 @@ new QRCode(document.getElementById("qrcode"), "https://docs.google.com/document/
         }, { threshold: 0.2 });
 
         document.querySelectorAll(".animate").forEach(el => observer.observe(el));
+    });
+    document.querySelectorAll(".cert-tile").forEach(tile => {
+        tile.addEventListener("click", function () {
+            const pdfUrl = this.getAttribute("data-pdf");
+            document.getElementById("pdf-viewer").src = pdfUrl;
+            document.getElementById("pdf-modal").style.display = "flex";
+        });
+    });
+
+    document.querySelector(".close").addEventListener("click", function () {
+        document.getElementById("pdf-modal").style.display = "none";
+    });
+
+    window.addEventListener("click", function (event) {
+        if (event.target === document.getElementById("pdf-modal")) {
+            document.getElementById("pdf-modal").style.display = "none";
+        }
     });
 </script>
 

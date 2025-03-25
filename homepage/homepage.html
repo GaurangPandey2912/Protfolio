@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Gaurang Pandey</title>
-    <link rel="stylesheet" href="styles.css">
-
         <link rel="stylesheet" href="styleshome.css">
 
 </head>
@@ -15,8 +13,7 @@
         <nav>
             <ul>
                 <li><a href="/Protfolio/aboutme/aboutme.html">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="/Protfolio/projects/projects.html">Projects</a></li>
             </ul>
         </nav>
     </header>
@@ -65,24 +62,95 @@
             </a>
         </div>
         
-        
     </section>
-    <section id="github-stats">
-        <h2>My GitHub Contributions</h2>
+    <section id="fun-zone">
+        <h2>Interactive Fun Zone</h2>
     
-        <!-- GitHub Contributions Graph -->
-        <img src="https://streak-stats.demolab.com?user=GaurangPandey2912&theme=dark&hide_border=true" alt="GitHub Streak Stats">
+        <div class="fun-container">
+            <!-- Click Counter -->
+            <div class="fun-box">
+                <h3>Click the Button</h3>
+                <p>Can you reach 50 clicks?</p>
+                <button id="click-btn" class="fun-btn">Clicked 0 times</button>
+            </div>
+    
+            <!-- Tech Fact Generator -->
+            <div class="fun-box">
+                <h3>Did You Know?</h3>
+                <p id="fact">Click below to get a random AI fact!</p>
+                <button id="fact-btn" class="fun-btn">Get Fact</button>
+            </div>
+    
+            <!-- Typing Challenge -->
+            <div class="fun-box">
+                <h3>Typing Speed Test</h3>
+                <p id="typing-text">Press Start to begin!</p>
+                <input type="text" id="typing-input" placeholder="Type here..." disabled>
+                <button id="typing-btn" class="fun-btn">Start</button>
+                <p id="speed-result"></p>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // Click Counter
+        let clickCount = 0;
+        document.getElementById("click-btn").addEventListener("click", function () {
+            clickCount++;
+            this.textContent = `Clicked ${clickCount} times`;
+        });
+    
+        // Random Tech Fact Generator
+        const facts = [
+            "AI can now create art that sells for thousands of dollars!",
+            "The first AI program was written in 1951.",
+            "Deep learning is inspired by the human brain's neural networks.",
+            "AI can analyze medical scans better than some doctors!",
+            "The Turing Test was proposed in 1950 by Alan Turing.",
+        ];
+    
+        document.getElementById("fact-btn").addEventListener("click", function () {
+            const randomFact = facts[Math.floor(Math.random() * facts.length)];
+            document.getElementById("fact").textContent = randomFact;
+        });
+    
+        // Typing Challenge
+        let startTime, endTime;
+    const typingSentences = [
+        "AI is transforming the world.",
+        "Machine learning is a subset of AI.",
+        "Deep learning mimics the human brain.",
+        "Natural language processing helps AI understand us."
+    ];
 
+    document.getElementById("typing-btn").addEventListener("click", function () {
+        const randomSentence = typingSentences[Math.floor(Math.random() * typingSentences.length)];
+        document.getElementById("typing-text").textContent = randomSentence;
+        document.getElementById("typing-input").value = "";
+        document.getElementById("typing-input").disabled = false;
+        document.getElementById("speed-result").textContent = "";
+        document.getElementById("typing-input").focus();
+
+        startTime = new Date().getTime();
+    });
+
+    document.getElementById("typing-input").addEventListener("input", function () {
+        const typedText = this.value;
+        const targetText = document.getElementById("typing-text").textContent;
+
+        if (typedText === targetText) {
+            endTime = new Date().getTime();
+            let timeTaken = (endTime - startTime) / 1000; 
+            let words = targetText.split(" ").length;
+            let wpm = Math.round((words / timeTaken) * 60);
+
+            document.getElementById("speed-result").textContent = `You typed at ${wpm} words per minute!`;
+            document.getElementById("typing-input").disabled = true;
+        }
+    });
+    </script>
     
-        <!-- Latest GitHub Repositories -->
-        <h3>Latest Repositories</h3>
-        <ul id="repo-list"></ul>
-    
-        <!-- Latest GitHub Activity -->
-        <h3>Recent Activity</h3>
-        <ul id="activity-list"></ul>
-    </section>
-    
+   
 
     <script>
         function updateGreeting() {
@@ -118,48 +186,25 @@
                 this.textContent = "Switch to Professional";
             }
         });
-        const token = "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"; 
-const username = "GaurangPandey2912";
-
-async function fetchGitHubRepos() {
-    const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=5`, {
-        headers: { Authorization: `token ${token}` }
-    });
-    const repos = await response.json();
-    
-    if (repos.message) { // Check if an error occurred
-        console.error("GitHub API Error:", repos.message);
-        return;
-    }
-
-    let repoList = document.getElementById("repo-list");
-    repoList.innerHTML = repos.map(repo => `<li><a href="${repo.html_url}" target="_blank">${repo.name}</a></li>`).join("");
-}
-
-async function fetchGitHubActivity() {
-    const response = await fetch(`https://api.github.com/users/${username}/events/public`, {
-        headers: { Authorization: `token ${token}` }
-    });
-    const events = await response.json();
-    
-    if (events.message) {
-        console.error("GitHub API Error:", events.message);
-        return;
-    }
-
-    let activityList = document.getElementById("activity-list");
-    activityList.innerHTML = events.slice(0, 5).map(event => `<li>${event.type} in <a href="https://github.com/${event.repo.name}" target="_blank">${event.repo.name}</a></li>`).join("");
-}
-
-// Load data
-fetchGitHubRepos();
-fetchGitHubActivity();
+        
     </script>
     
     
 </body>
 
     <footer>
+        <section id="socials">
+            <div class="social-links">
+                <a href="https://github.com/GaurangPandey2912" target="_blank">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="30px" alt="GitHub">
+                </a>
+                
+                <a href="https://www.linkedin.com/in/gaurang-pandey-977263176/" target="_blank">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="30px" alt="LinkedIn">
+                </a>
+            </div>
+        </section>
+        <br>
         <p>&copy; 2025 Gaurang Pandey. All rights reserved.</p>
     </footer>
 </html>

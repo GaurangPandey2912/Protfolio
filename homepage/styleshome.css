@@ -200,113 +200,82 @@ nav ul li a:hover::after {
     border: 2px solid #FFD700;
     transform: scale(1.1);
 }
-
-/* Section Padding */
-section {
-    padding: 80px 20px;
-    text-align: center;
-}
-/* GitHub Section Styling */
-#github-stats {
-    text-align: center;
-    padding: 40px;
-    margin: 50px auto;
-    max-width: 800px;
-    background: rgba(255, 215, 0, 0.1);
-    border: 2px solid #FFD700;
-    border-radius: 10px;
-    position: relative;
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-}
-
-/* Legend for GitHub Section */
-#github-stats::before {
-    content: "GitHub Overview";
-    position: absolute;
-    top: -12px;
-    left: 20px;
-    background: black;
-    padding: 5px 10px;
-    font-weight: bold;
-    color: #FFD700;
-    border: 1px solid #FFD700;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-/* Repository List */
-#repo-list {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-}
-
-#repo-list li {
-    margin: 10px 0;
-}
-
-#repo-list a {
-    display: block;
-    padding: 10px;
-    background: rgba(255, 215, 0, 0.2);
-    color: #FFD700;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: 0.3s;
-    text-align: center;
-}
-
-#repo-list a:hover {
-    background-color: #FFD700;
-    color:black;
-    transform: scale(1.05);
-}
-
-/* Activity List */
-#activity-list {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-}
-#activity-list li a {
-    color: #FFD700; 
-    text-decoration: none; 
-}
-
-#activity-list li a:hover {
-    color: black; 
-}
-
-#activity-list li {
-    color:#FFD700;
-    padding: 10px;
-    background: rgba(255, 215, 0, 0.2);
-    margin: 5px 0;
-    border-radius: 5px;
-    transition: 0.3s;
-    list-style: none; /* Remove default bullet */
-    padding-left: 15px;
-    position: relative;
-}
-
-#activity-list li:hover {
-    background: #FFD700;
-    color: black;
-    transform: scale(1.02);
-    cursor: pointer;
-    left: 0;
-}
-#activity-list li:hover a {
-    color: black; /* Change link color on hover */
-}
 /* Footer (Now Sticks to Bottom) */
 footer {
     text-align: center;
-    background-image: url('images/background.jpg');
     color: #FFD700;
     padding: 10px;
     position: relative;
     width: 100%;
     bottom: 0;
+}.social-links {
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center top;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a i {
+    font-size: 200px;
+    color: #FFD700;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a {
+    display: inline-block;
+    transition: transform 0.5s ease-in-out;
+}
+
+.social-links a:hover {
+    transform: rotate(360deg);
+    color: #ffcc00;
+}
+
+.social-links img {
+    background-color: white;
+    width: 50px;
+    height: 50px;
+}
+
+#fun-zone {
+    text-align: left;
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 90%; 
+    background: rgba(255, 215, 0, 0.1);
+    border-radius: 10px;
+    padding: 40px 20px;  background: rgba(255, 215, 0, 0.2);
+    color: #FFD700;
+}
+
+.fun-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: auto;
+}
+
+.fun-box {
+    background: black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 10px;
+    flex: 1;
+    max-width: 280px;
+    min-width: 250px;
+}
+
+.fun-btn {
+    background: #FFD700;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
 }
