@@ -353,3 +353,25 @@ nav ul li a:hover::after {
 .experience-list li:hover h3, .experience-list li:hover p {
     color: black;
 }
+.project-list{
+    list-style: none;
+    padding: 0;
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between;
+}
+.project-list li{
+    flex: 1 1 calc(50% - 20px); /* Two-column layout */
+    padding: 20px;
+    margin: 15px;
+    background: rgba(255, 215, 0, 0.2);
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+    min-width: 45%;
+}
+.project-list ul li:hover{
+    background: #FFD700;
+    color: black;
+    transform: scale(1.02);
+    cursor: pointer;
+}
