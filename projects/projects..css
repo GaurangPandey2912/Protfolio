@@ -4,8 +4,6 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-
-/* Ensure full height */
 html, body {
     min-height: 100vh;
     display: flex;
@@ -13,12 +11,9 @@ html, body {
     padding-top: 20px;
 }
 
-/* Make content take full space */
 main {flex: 1;
     padding-bottom: 100px;
 }
-
-/* Dark background with gold text */
 body {
     background: black;
     color: #FFD700;
@@ -26,8 +21,6 @@ body {
     background-position: center;
     background-attachment: fixed;
 }
-
-/* Header Styling */
 header {
     display: flex;
     justify-content: space-between;
@@ -40,8 +33,6 @@ header {
     top: 0;
     z-index: 1000;
 }
-
-/* Navigation */
 nav ul {
     list-style: none;
     display: flex;
@@ -88,8 +79,6 @@ nav ul li a:hover::after {
     position: relative;
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
-
-/* Legend for GitHub Section */
 #github-stats::before {
     content: "GitHub Overview";
     position: absolute;
@@ -103,8 +92,6 @@ nav ul li a:hover::after {
     border-radius: 5px;
     font-size: 14px;
 }
-
-/* Repository List */
 #repo-list {
     list-style: none;
     padding: 0;
@@ -132,8 +119,6 @@ nav ul li a:hover::after {
     color:black;
     transform: scale(1.05);
 }
-
-/* Activity List */
 #activity-list {
     list-style: none;
     padding: 0;
@@ -168,9 +153,8 @@ nav ul li a:hover::after {
     left: 0;
 }
 #activity-list li:hover a {
-    color: black; /* Change link color on hover */
+    color: black; 
 }
-/* CodeChef Section Styling */
 #codechef {
     text-align: center;
     padding: 50px 20px;
@@ -320,11 +304,11 @@ nav ul li a:hover::after {
     padding: 0;
     display: flex; 
     flex-wrap: wrap; 
-    justify-content: space-between; /* Spread items evenly */
+    justify-content: space-between; 
 }
 
 .experience-list li {
-    flex: 1 1 calc(50% - 20px); /* Two-column layout */
+    flex: 1 1 calc(50% - 20px); 
     padding: 20px;
     margin: 15px;
     background: rgba(255, 215, 0, 0.2);
@@ -361,7 +345,7 @@ nav ul li a:hover::after {
     justify-content: space-between;
 }
 .project-list li{
-    flex: 1 1 calc(50% - 20px); /* Two-column layout */
+    flex: 1 1 calc(50% - 20px); 
     padding: 20px;
     margin: 15px;
     background: rgba(255, 215, 0, 0.2);
